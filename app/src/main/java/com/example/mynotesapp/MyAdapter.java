@@ -1,6 +1,7 @@
 package com.example.mynotesapp;
 
 import android.content.Context;
+import android.os.Build;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -13,6 +14,9 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.text.DateFormat;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 
 import io.realm.Realm;
 import io.realm.RealmResults;
@@ -38,9 +42,13 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         Note note = notesList.get(position);
         holder.titleOutput.setText(note.getTitle());
         holder.descriptionOutput.setText(note.getDescription());
-        String formatedTime = DateFormat.getDateTimeInstance().format(note.createdTime);
-        holder.timeOutput.setText(formatedTime);
 
+        holder.timeOutput.setText(DateFormat.getDateTimeInstance().format(note.createdTime));
+
+        int color_code = getRandomColor();
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            holder.itemView.setBackgroundColor(holder.itemView.getResources().getColor(color_code,null));
+        }
 
         holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
@@ -64,6 +72,23 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
                 return true;
             }
         });
+    }
+
+    private int getRandomColor(){
+        List<Integer> colorCode = new ArrayList<>();
+        colorCode.add(R.color.color1);
+        colorCode.add(R.color.color2);
+        colorCode.add(R.color.color3);
+        colorCode.add(R.color.color4);
+        colorCode.add(R.color.color5);
+        colorCode.add(R.color.color6);
+        colorCode.add(R.color.color7);
+        colorCode.add(R.color.color8);
+        colorCode.add(R.color.color9);
+
+        Random random = new Random();
+        int random_color = random.nextInt(colorCode.size());
+        return colorCode.get(random_color);
     }
 
     @Override

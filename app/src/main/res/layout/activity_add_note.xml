@@ -54,7 +54,7 @@
         android:layout_height="wrap_content"
         android:text="Save your good note"
         android:layout_gravity="center"
-        android:backgroundTint="@color/light_green"
+        android:backgroundTint="@color/light_brown"
         android:textColor="@color/black"/>
 
 </LinearLayout>
