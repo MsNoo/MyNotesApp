@@ -41,6 +41,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         String formatedTime = DateFormat.getDateTimeInstance().format(note.createdTime);
         holder.timeOutput.setText(formatedTime);
 
+
         holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View view) {

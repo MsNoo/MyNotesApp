@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.google.android.material.button.MaterialButton;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.Date;
 
@@ -24,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        MaterialButton addNoteBtn = findViewById(R.id.addNewNoteBtn);
+        FloatingActionButton addNoteBtn = findViewById(R.id.addNewNoteBtn);
         addNoteBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

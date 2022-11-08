@@ -44,7 +44,7 @@
             android:padding="8dp"
             android:layout_margin="8dp"
             android:background="@color/white"
-            android:lines="10"
+            android:lines="13"
             android:gravity="top"/>
     </LinearLayout>
 
@@ -54,7 +54,7 @@
         android:layout_height="wrap_content"
         android:text="Save your good note"
         android:layout_gravity="center"
-        android:backgroundTint="@color/light_grey"
+        android:backgroundTint="@color/light_green"
         android:textColor="@color/black"/>
 
 </LinearLayout>

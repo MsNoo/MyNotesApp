@@ -8,6 +8,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.android.material.button.MaterialButton;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import io.realm.Realm;
 
@@ -32,7 +33,10 @@ public class AddNoteActivity extends AppCompatActivity {
                 String title = titleInput.getText().toString();
                 String description = descriptionInput.getText().toString();
                 long createdTime = System.currentTimeMillis();
-
+                if (description.isEmpty()){
+                    Toast.makeText(AddNoteActivity.this, "You forgot something",Toast.LENGTH_SHORT).show();
+                    return;
+                }
                 realm.beginTransaction();
                 Note note = realm.createObject(Note.class);
                 note.setTitle(title);
