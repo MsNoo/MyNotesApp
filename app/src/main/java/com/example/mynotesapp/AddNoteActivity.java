@@ -16,15 +16,11 @@ public class AddNoteActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_note);
-
         EditText titleInput = findViewById(R.id.titleInput);
         EditText descriptionInput = findViewById(R.id.descriptionInput);
-        MaterialButton saveBtn = findViewById(R.id.saveBtn);
-
+        FloatingActionButton saveBtn = findViewById(R.id.saveBtn);
         Realm.init(getApplicationContext());
         Realm realm = Realm.getDefaultInstance();
-
-
         saveBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

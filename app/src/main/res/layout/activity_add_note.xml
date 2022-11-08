@@ -48,13 +48,14 @@
             android:gravity="top"/>
     </LinearLayout>
 
-    <com.google.android.material.button.MaterialButton
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/saveBtn"
-        android:layout_width="wrap_content"
+        android:layout_width="264dp"
         android:layout_height="wrap_content"
-        android:text="Save your good note"
         android:layout_gravity="center"
         android:backgroundTint="@color/light_brown"
-        android:textColor="@color/black"/>
+        android:src="@drawable/ic_save"
+        android:textColor="@color/black"
+        android:textStyle="bold" />
 
 </LinearLayout>

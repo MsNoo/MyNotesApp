@@ -9,15 +9,12 @@ import android.view.ViewGroup;
 import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
 import java.text.DateFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-
 import io.realm.Realm;
 import io.realm.RealmResults;
 
@@ -42,7 +39,6 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         Note note = notesList.get(position);
         holder.titleOutput.setText(note.getTitle());
         holder.descriptionOutput.setText(note.getDescription());
-
         holder.timeOutput.setText(DateFormat.getDateTimeInstance().format(note.createdTime));
 
         int color_code = getRandomColor();
@@ -85,6 +81,11 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         colorCode.add(R.color.color7);
         colorCode.add(R.color.color8);
         colorCode.add(R.color.color9);
+        colorCode.add(R.color.color10);
+        colorCode.add(R.color.color11);
+        colorCode.add(R.color.color12);
+        colorCode.add(R.color.color13);
+        colorCode.add(R.color.color14);
 
         Random random = new Random();
         int random_color = random.nextInt(colorCode.size());
@@ -106,7 +107,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
             titleOutput = itemView.findViewById(R.id.titleOutput);
             descriptionOutput = itemView.findViewById(R.id.descriptionOutput);
-            timeOutput = itemView.findViewById(R.id.titleOutput);
+            timeOutput = itemView.findViewById(R.id.timeOutput);
         }
     }
 }
